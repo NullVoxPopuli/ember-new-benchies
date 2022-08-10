@@ -2,8 +2,6 @@
 
 set -e
 
-source "$(dirname "${BASH_SOURCE[0]}")/-helpers.sh"
-
 if [ -z "$REMOVE_LINTS" ]
 then
   ember new npm-app --skip-git
@@ -12,7 +10,7 @@ else
 
   cd npm-app
 
-  cleanPackageJson
+  node ../clean.js
 
   npm install
 fi

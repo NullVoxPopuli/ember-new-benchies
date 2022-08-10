@@ -1,8 +1,6 @@
 #!/bin/bash
 
-set -e
-
-source "$(dirname "${BASH_SOURCE[0]}")/-helpers.sh"
+set -ex
 
 # ember-cli does not support pnpm...
 ember new pnpm-app --skip-git --skip-npm
@@ -12,7 +10,7 @@ cd pnpm-app
 
 if [ -z "$REMOVE_LINTS" ]
 then
-  cleanPackageJson
+  node ../clean.js
 fi
 
 # because the app blueprints do not have @babel/core
@@ -21,5 +19,5 @@ fi
 #
 # See: https://github.com/ember-cli/ember-cli/pull/9934
 set +e
-pnpm install
+pnpm install || echo 0
 set -e

@@ -2,8 +2,6 @@
 
 set -e
 
-source "$(dirname "${BASH_SOURCE[0]}")/-helpers"
-
 if [ -z "$REMOVE_LINTS" ]
 then
   ember new yarn-app --skip-git --yarn
@@ -12,7 +10,7 @@ else
 
   cd yarn-app
 
-  cleanPackageJson
+  node ../clean.js
 
   yarn install
 fi

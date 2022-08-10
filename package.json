@@ -1,0 +1,7 @@
+{
+  "name": "ember-new-benchies",
+  "type": "module",
+  "volta": {
+    "node": "16.16.0"
+  }
+}

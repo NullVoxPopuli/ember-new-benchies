@@ -1,8 +1,7 @@
 #!/bin/bash
 
-cd ${TMPDIR:/tmp}
-
-hyperfine --runs 1 --shell bash \
+hyperfine \
+  --runs 3 --shell bash \
   --prepare "rm -rf pnpm-app" "./pnpm.sh" \
   --prepare "rm -rf npm-app" "./npm.sh" \
   --prepare "rm -rf yarn-app" "./yarn.sh" \

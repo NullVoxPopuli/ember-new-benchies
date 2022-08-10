@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 # ember-cli does not support pnpm...
 ember new pnpm-app --skip-git --skip-npm
@@ -8,7 +8,7 @@ ember new pnpm-app --skip-git --skip-npm
 cd pnpm-app
 
 
-if [ -z "$REMOVE_LINTS" ]
+if [ "$REMOVE_LINTS" == "true" ]
 then
   node ../clean.js
 fi

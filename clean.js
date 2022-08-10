@@ -6,6 +6,7 @@ const IGNORE = [
   /eslint/,
   /npm-run-all/,
   /ember-cli-terser/,
+  /ember-cli-dependency-checker/,
   /ember-welcome-page/,
   /ember-cli-sri/,
 ]

@@ -2,7 +2,7 @@
 
 set -e
 
-if [ -z "$REMOVE_LINTS" ]
+if [ "$REMOVE_LINTS" == "true" ]
 then
   ember new yarn-app --skip-git --yarn
 else
